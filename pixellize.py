@@ -45,13 +45,15 @@ def perform_compress(input_image, base):
     return
 
 
-image1 = cv2.imread("7.png")
-canny = cv2.imread("canny.png", cv2.IMREAD_GRAYSCALE)
-print(image1.shape)
+image1 = cv2.imread("test_pics/7.png")
+canny = cv2.imread("test_pics/canny.png", cv2.IMREAD_GRAYSCALE)
 height, width, dim = image1.shape
-# for i in range(height):
-    # for j in range(width):
-        # if canny
+for i in range(height):
+    for j in range(width):
+        if canny[i][j] != 0:
+            image1[i][j] = 100
+
+cv2.imwrite('test_pics/add_black.png', image1)
 
 
 # base = 3
